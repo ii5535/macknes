@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <title>이거어때 </title>
+</head>
+<body>
+    <div class = "menubar">
+        <a href="{% url 'home' %}" class = "active">Home</a>
+        <a href="{% url 'translate' %}" class = "active">번역</a>
+        <a href="{% url 'weather' %}" class = "active">날씨</a>
+        <a href="{% url 'starplace' %}" class = "active">명소,별점</a>
+        <a href="{% url 'notice' %}" class = "active">게시판</a>
+    </div>
+    {% block content %}
+    <div>
+        <p>여기는 메인 페이지입니다</p>
+    </div>
+    {% endblock %}
+</body>
+</html>

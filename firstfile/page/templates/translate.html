@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style2.css'%}">
+    <title>이거어때 </title>
+</head>
+<body>
+    <div class = "menubar">
+        <a href="{% url 'home' %}" class = "active">Home</a>
+        <a href="{% url 'translate' %}" class = "active">번역</a>
+        <a href="{% url 'weather' %}" class = "active">날씨</a>
+        <a href="{% url 'starplace' %}" class = "active">명소,별점</a>
+        <a href="{% url 'notice' %}" class = "active">게시판</a>
+    </div>
+    <div class="container">
+        <div class="wrapper">
+          <div class="text-input">
+            <textarea spellcheck="false" class="from-text" placeholder="Enter text"></textarea>
+            <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation"></textarea>
+          </div>
+          <ul class="controls">
+            <li class="row from">
+              <div class="icons">
+                <i id="from" class="fas fa-volume-up"></i>
+                <i id="from" class="fas fa-copy"></i>
+              </div>
+              <select></select>
+            </li>
+            <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+            <li class="row to">
+              <select></select>
+              <div class="icons">
+                <i id="to" class="fas fa-volume-up"></i>
+                <i id="to" class="fas fa-copy"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button>Translate Text</button>
+      </div>
+      <script src="{% static 'countries.js' %}"></script>
+      <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
